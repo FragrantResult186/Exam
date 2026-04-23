@@ -14,7 +14,7 @@ public class SubjectDeleteExecuteAction extends Action {
         String cd = "";
 
         // リクエストパラメータの取得 2
-        cd = req.getParameter("cd");
+        cd = req.getParameter("no");
 
         // DBからデータ取得 3
         // なし
@@ -24,14 +24,17 @@ public class SubjectDeleteExecuteAction extends Action {
 
         // DBへデータ保存 5
         SubjectDao subjectDao = new SubjectDao();
+        
         boolean result = subjectDao.delete(cd);
+        System.out.println(cd);
+        System.out.println(result);
 
         // レスポンス値をセット 6
         // なし
 
         // JSPへフォワード 7
         if (result) {
-            res.sendRedirect("SubjectList.action");
+            res.sendRedirect("SubjectList.Action");
         } else {
             req.setAttribute("errorMessage", "科目情報の削除に失敗しました。");
             req.getRequestDispatcher("/error.jsp").forward(req, res);
