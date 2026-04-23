@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import bean.Subject;
+import bean.Teacher;
 import dao.SubjectDao;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
 /**
@@ -18,7 +20,11 @@ public class SubjectCreateExecuteAction extends Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        SubjectDao subjectDao = new SubjectDao();
+    	HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("user");
+        
+
+    	SubjectDao subjectDao = new SubjectDao();
         Map<String, String> errors = new HashMap<>();
 
         // パラメータ取得
@@ -63,6 +69,9 @@ public class SubjectCreateExecuteAction extends Action {
 
         // ---- DBに科目を保存する（入力された値をDBに保存）----
         Subject subject = new Subject();
+      
+        //System.out.println(teacher.getSchool().getCd());
+        subject.setSchoolCd(teacher.getSchool().getCd());
         subject.setCD(cd.trim());
         subject.setName(name.trim());
 

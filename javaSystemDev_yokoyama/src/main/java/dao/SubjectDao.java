@@ -54,11 +54,12 @@ public class SubjectDao extends Dao {
 
         try (Connection connection = getConnection()) {
             if (old == null) {
-                String sql = "INSERT INTO subject (cd, name) VALUES (?, ?)";
+                String sql = "INSERT INTO subject (school_cd, cd, name) VALUES (?, ?, ?)";
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                    statement.setString(1, subject.getCd());
-                    statement.setString(2, subject.getName());
+                	statement.setString(1, subject.getSchoolCd());
+                	statement.setString(2, subject.getCd());
+                    statement.setString(3, subject.getName());
                     count = statement.executeUpdate();
                 }
             } else {
