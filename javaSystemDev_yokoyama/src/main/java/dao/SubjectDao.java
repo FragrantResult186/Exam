@@ -50,15 +50,16 @@ public class SubjectDao extends Dao {
 
     public boolean save(Subject subject) throws Exception {
         int count;
-        Subject old = get(subject.getCD());
+        Subject old = get(subject.getCd());
 
         try (Connection connection = getConnection()) {
             if (old == null) {
-                String sql = "INSERT INTO subject (cd, name) VALUES (?, ?)";
+                String sql = "INSERT INTO subject (school_cd, cd, name) VALUES (?, ?, ?)";
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                    statement.setString(1, subject.getCD());
-                    statement.setString(2, subject.getName());
+                	statement.setString(1, subject.getSchoolCd());
+                	statement.setString(2, subject.getCd());
+                    statement.setString(3, subject.getName());
                     count = statement.executeUpdate();
                 }
             } else {
@@ -66,7 +67,7 @@ public class SubjectDao extends Dao {
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, subject.getName());
-                    statement.setString(2, subject.getCD());
+                    statement.setString(2, subject.getCd());
                     count = statement.executeUpdate();
                 }
             }
