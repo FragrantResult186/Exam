@@ -15,17 +15,7 @@
             <h2 class="h4 fw-normal bg-secondary bg-opacity-10 py-2 px-4">科目削除</h2>
             <hr class="mt-0">
 
-            <p class="px-2">以下の科目を削除します。よろしいですか？</p>
-
-            <%-- 科目情報の表示 --%>
-            <div class="mb-3">
-                <label class="form-label">科目コード</label>
-                <p class="form-control-plaintext fw-bold ps-2">${subject.cd}</p>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">科目名</label>
-                <p class="form-control-plaintext fw-bold ps-2">${subject.name}</p>
-            </div>
+            <p class="px-2">「${subject.name}(${subject.cd})」を科目を削除してもよろしいですか？</p>
 
             <%-- 操作ボタン --%>
             <div class="mt-4">
