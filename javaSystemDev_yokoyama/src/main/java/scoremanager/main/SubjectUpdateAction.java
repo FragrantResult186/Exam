@@ -23,7 +23,7 @@ public class SubjectUpdateAction extends Action {
         request.setAttribute("subject", subject);
 
         // 更新画面へ
-        request.getRequestDispatcher("student_update.jsp").forward(request,response);
+        request.getRequestDispatcher("subject_update.jsp").forward(request,response);
        
 }
 }
