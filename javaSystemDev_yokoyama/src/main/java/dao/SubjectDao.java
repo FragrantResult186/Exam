@@ -57,7 +57,7 @@ public class SubjectDao extends Dao {
                 String sql = "INSERT INTO subject (cd, name) VALUES (?, ?)";
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                    statement.setString(1, subject.getCD());
+                    statement.setString(1, subject.getCd());
                     statement.setString(2, subject.getName());
                     count = statement.executeUpdate();
                 }
@@ -66,7 +66,7 @@ public class SubjectDao extends Dao {
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, subject.getName());
-                    statement.setString(2, subject.getCD());
+                    statement.setString(2, subject.getCd());
                     count = statement.executeUpdate();
                 }
             }
