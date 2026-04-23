@@ -74,6 +74,22 @@ public class SubjectDao extends Dao {
         }
         return count > 0;
     }
+    public void update(String cd, String name) throws Exception {
+
+        Connection con = getConnection();
+
+        PreparedStatement st = con.prepareStatement(
+            "UPDATE subject SET name=? WHERE cd=?"
+        );
+
+        st.setString(1, name);
+        st.setString(2, cd);
+
+        st.executeUpdate();
+
+        st.close();
+        con.close();
+    }
 
     public boolean delete(String cd) throws Exception {
         String sql = "DELETE FROM subject WHERE cd = ?";
