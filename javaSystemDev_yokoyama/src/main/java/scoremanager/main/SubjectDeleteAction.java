@@ -16,7 +16,7 @@ public class SubjectDeleteAction extends Action {
         Subject subject = null;
 
         // リクエストパラメータの取得 2
-        cd = req.getParameter("cd");
+        cd = req.getParameter("no");
 
         // DBからデータ取得 3
         SubjectDao subjectDao = new SubjectDao();
