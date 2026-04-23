@@ -90,6 +90,8 @@ public class SubjectDao extends Dao {
 
         st.close();
         con.close();
+        
+        
     }
 
     public boolean delete(String cd) throws Exception {
