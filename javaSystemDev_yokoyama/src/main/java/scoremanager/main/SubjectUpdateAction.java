@@ -13,11 +13,13 @@ public class SubjectUpdateAction extends Action {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         // 科目コード取得
-        String cd = request.getParameter("cd");
+        String cd = request.getParameter("no");
+        System.out.println(cd);
 
         // DAOで取得
         SubjectDao subjectDao = new SubjectDao();
         Subject subject = subjectDao.get(cd);
+         System.out.println(subject);
 
         // JSPに渡す
         request.setAttribute("subject", subject);

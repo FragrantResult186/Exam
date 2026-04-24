@@ -16,6 +16,8 @@
 
     科目コード：<input type="text" name="cd" value="${subject.cd}" ><br>
     科目名：<input type="text" name="name" value="${subject.name}"><br>
+    <input type="hidden" name="school_cd" value="${subject.schoolCd}">
+    
 
     <input type="submit" value="更新">
 </form>

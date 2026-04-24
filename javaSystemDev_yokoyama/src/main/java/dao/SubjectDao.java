@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.School;
 import bean.Subject;
 
 public class SubjectDao extends Dao {
@@ -74,17 +75,19 @@ public class SubjectDao extends Dao {
         }
         return count > 0;
     }
-    public void update(String cd, String name, String schoolCd) throws Exception {
+    public void update(String cd, String name, School school) throws Exception {
 
         Connection con = getConnection();
 
         PreparedStatement st = con.prepareStatement(
             "UPDATE subject SET name=? WHERE cd=? AND school_cd=?"
         );
-
+        System.out.println(name);
+        System.out.println(cd);
+        System.out.println(school.getCd());
         st.setString(1, name);
         st.setString(2, cd);
-        st.setString(3, schoolCd);
+        st.setString(3, school.getCd());
 
         st.executeUpdate();
 
