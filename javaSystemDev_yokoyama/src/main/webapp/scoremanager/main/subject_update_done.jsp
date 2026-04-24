@@ -8,6 +8,6 @@
 	<c:param name="content">
     	<p class="alert alert-success">変更が完了しました</p>
     	<br><br><br><br><br><br>
-    	<a href="SubjectList.action">戻る</a>
+    	<a href="StudentList.action">戻る</a>
 	</c:param>
 </c:import>

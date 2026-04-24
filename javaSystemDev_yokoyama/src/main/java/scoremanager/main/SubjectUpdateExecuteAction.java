@@ -20,17 +20,17 @@ public class SubjectUpdateExecuteAction extends Action {
         String name = request.getParameter("name");
         //String schoolCd = (String)request.getSession().getAttribute("school_cd");
         
-        
-        
-
         // 更新処理
         SubjectDao subjectDao = new SubjectDao();
         subjectDao.update(cd, name,school);
+        
+        
         
         System.out.println("cd=" + cd);
         System.out.println("name=" + name);
 
         // 一覧画面に戻す
-        response.sendRedirect("SubjectList.action");
+        //response.sendRedirect("SubjectList.action");
+        request.getRequestDispatcher("student_update_done.jsp").forward(request, response);
     }
 }
