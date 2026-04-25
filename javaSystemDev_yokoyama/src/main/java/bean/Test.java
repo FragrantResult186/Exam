@@ -7,6 +7,8 @@ public class Test {
 	public int no;
 	public int point;
 	public String classNum;
+	public int entYear;
+	public String studentName;
 	
 	public String getStudentNo() {
 		return studentNo;
@@ -44,4 +46,11 @@ public class Test {
 	public void setClassNum(String classNum) {
 		this.classNum = classNum;
 	}
+	public void setEntYear(int entYear) {
+		this.entYear = entYear;	
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	
 }

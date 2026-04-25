@@ -13,12 +13,9 @@ import dao.StudentDao;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import tool.Action;
 
-public class StudentListAction extends Action {
-
-    @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+public class StudentListAction {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher) session.getAttribute("user");
 
@@ -80,6 +77,8 @@ public class StudentListAction extends Action {
         request.setAttribute("class_num_set", classNumSet);
         request.setAttribute("ent_year_set", entYearSet);
 
-        request.getRequestDispatcher("student_list.jsp").forward(request, response);
+        request.getRequestDispatcher("student_list.jsp");
     }
+
+
 }

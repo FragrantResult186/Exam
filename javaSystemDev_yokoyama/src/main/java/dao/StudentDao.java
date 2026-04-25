@@ -73,7 +73,7 @@ public class StudentDao extends Dao {
         }
     }
 
-    public List<Student> filter(School school, int entYear, String classNum, Boolean isAttend) throws Exception {
+    public List<Student> filter(School school, int entYear, String classNum,  Boolean isAttend) throws Exception {
         String sql = baseSql
             + " and ent_year=? and class_num=?"
             + getAttendCondition(isAttend)
