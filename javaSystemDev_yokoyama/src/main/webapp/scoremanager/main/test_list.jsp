@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:import url="/common/base.jsp">
 <c:param name="title">得点管理システム</c:param>
 
@@ -37,7 +39,7 @@
             </div>
 
             <!-- 科目 -->
-            <div class="col-3">
+            <div class="col-2">
                 <label>科目</label>
                 <select class="form-select" name="f4">
                     <option value="">--------</option>
@@ -50,7 +52,7 @@
             </div>
 
             <!-- 回数 -->
-            <div class="col-1">
+            <div class="col-2">
                 <label>回数</label>
                 <input type="number" class="form-control" name="f5" value="${f5}">
             </div>
